@@ -23,13 +23,15 @@ All numbers come from the notebook. Maps are random and seeded, so the node coun
 
 ![A* path](images/A-star%20path.png)
 
-### Obstacle density (30x30 maps, nodes explored, BFS vs A*)
+### Obstacle density (30x30 maps, nodes explored)
 
-| Density | BFS | A* |
-| :--- | :---: | :---: |
-| 0.1 | 808.2 | 707.4 |
-| 0.2 | 713.8 | 493.0 |
-| 0.3 | 583.1 | 273.2 |
+| Density | BFS | Dijkstra | A* |
+| :--- | :---: | :---: | :---: |
+| 0.1 | 808.2 | 808.3 | 707.4 |
+| 0.2 | 713.8 | 714.1 | 493.0 |
+| 0.3 | 583.1 | 585.8 | 273.2 |
+
+*(Note: On unweighted grids where every step has equal cost, Dijkstra explores nearly the exact same number of nodes as BFS, so their lines overlap in the plot below.)*
 
 ![Algorithm comparison](images/algorithm_comparison.png)
 
