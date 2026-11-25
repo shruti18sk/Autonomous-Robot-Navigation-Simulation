@@ -1,4 +1,4 @@
-# Grid Path Planning: BFS, Dijkstra, A*, Q-Learning and a Learned Heuristic
+# Autonomous Robot Navigation Simulation: BFS, Dijkstra, A*, Q-Learning and a Learned Heuristic
 
 A simulation study of path planning on 2D grid maps. I first worked on this during my 7th semester industrial practical training. This repository is a rebuilt and extended version (November 2026).
 
