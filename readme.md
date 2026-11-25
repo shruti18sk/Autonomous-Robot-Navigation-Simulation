@@ -25,9 +25,8 @@ All numbers come from the notebook. Maps are random and seeded, so the node coun
 | **Dijkstra** | 38.6 | 316.6 |
 | **A*** | 38.6 | 214.6 |
 
-<p align="center">
-  <img src="images/astar_path.png" width="350" alt="A* Path on 20x20 Grid">
-</p>
+![A* Path on 20x20 Grid](images/astar_path.png)
+
 
 ### 2. Obstacle density & Grid size scaling
 *(30x30 maps, nodes explored, BFS vs A*)*
@@ -44,16 +43,20 @@ All numbers come from the notebook. Maps are random and seeded, so the node coun
 * **Dynamic Navigation:** When unexpected obstacles appear mid-route, the agent dynamically recalculates a valid path to the goal.
 * **OpenCV Map Conversion:** Custom obstacle images are processed into binary grids for pathfinding.
 
+
 | Dynamic Replanning | A* on OpenCV Image Map |
 | :---: | :---: |
-| <img src="images/dynamic_navigation.png" width="350"> | <img src="images/astar_image_map.png" width="350"> |
+| ![Dynamic Replanning](images/dynamic_navigation.png) | ![A* on OpenCV Image Map](images/astar_image_map.png) |
+
 
 ### 4. Q-Learning vs A*
 On 10 random maps, the Q-Learning agent (3000 training episodes per map) reached the goal every time, with the same path length as A*. A* needs no training.
 
+
 | Training Curve (Reward) | Learned Path |
 | :---: | :---: |
-| <img src="images/qlearning_training_curve.png" width="400"> | <img src="images/qlearning_learned_path.png" width="300"> |
+| ![Training Curve](images/qlearning_training_curve.png) | ![Learned Path](images/qlearning_learned_path.png) |
+
 
 ### 5. Learned Heuristic (Random Forest)
 The Random Forest predicted distance-to-goal with a mean error of `1.04`, against `1.26` for Manhattan distance. When I compared it with Manhattan distance that uses a tie-breaking rule, the Manhattan version explored fewer nodes (`66.9` against `110.2`) and ran much faster. The learned heuristic took roughly **100 times longer** because of feature computation and model prediction. So in this setup, a simple tie-breaking rule beat the learned heuristic.
